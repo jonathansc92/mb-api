@@ -1,0 +1,25 @@
+{
+  "name": "mb-api",
+  "version": "1.0.0",
+  "description": "API Test MB",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "serve": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "author": "Jonathan Cruz",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "dotenv-safe": "^8.2.0",
+    "express": "^4.18.2",
+    "express-validator": "^7.0.1",
+    "nodemon": "^2.0.22",
+    "supertest": "^6.3.3"
+  },
+  "devDependencies": {
+    "jest": "^29.6.1"
+  }
+}
