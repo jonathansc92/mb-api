@@ -10,6 +10,19 @@ services:
     environment:
       NODE_ENV: development
       DEBUG: nodejs-docker-express:*
+    depends_on:
+      - mb-db
+    links:
+      - mb-db
+  mb-db:
+    image: postgres
+    container_name: mb-db
+    ports:
+        - "5432:5432"
+    environment:
+      POSTGRES_DB: "mb"
+      POSTGRES_USER: "root"
+      POSTGRES_PASSWORD: "root"
 networks:
   default:
     name: mb
