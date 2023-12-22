@@ -11,18 +11,26 @@ services:
       NODE_ENV: development
       DEBUG: nodejs-docker-express:*
     depends_on:
-      - mb-db
-    links:
-      - mb-db
-  mb-db:
-    image: postgres
-    container_name: mb-db
+      - db
+  db:
+    image: "mysql"
+    container_name: db
+    restart: always
+    env_file: ./.env
     ports:
-        - "5432:5432"
+        - "${DB_PORT}:${DB_PORT}"
     environment:
-      POSTGRES_DB: "mb"
-      POSTGRES_USER: "root"
-      POSTGRES_PASSWORD: "root"
+        MYSQL_ROOT_PASSWORD: "{$DB_PWD}"
+        MYSQL_DATABASE: "{$DB_NAME}"
+        MYSQL_PASSWORD: "{$DB_PWD}"
+        MYSQL_ALLOW_EMPTY_PASSWORD: 1
+    volumes: 
+      - db-config:/etc/mysql
+      - db-data:/var/lib/mysql
+      - ./db/backup/files/:/data_backup/data
+volumes:
+  db-config:
+  db-data:
 networks:
   default:
     name: mb

@@ -1,7 +1,7 @@
 const messages = require('../utils/messages');
 const { check, validationResult } = require('express-validator');
 
-const login = () => [
+const user = () => [
   check('email')
     .notEmpty()
     .withMessage(messages.REQUIRED)
@@ -63,8 +63,8 @@ const reporter = (req, res, next) => {
 }
 
 module.exports = {
-  login: [
-    login(),
+  user: [
+    user(),
     reporter
   ],
 };
