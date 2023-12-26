@@ -29,18 +29,11 @@ O arquivo **server.js**, é neste arquivo que é incluído o **app.js**, respons
 
 ## O que você melhoraria se tivesse mais tempo
 
-- Refinaria e faria mais testes;
+- Ajustaria a config de banco de dados para pegar as variaveis de ambientes.
 
 ## Quais requisitos obrigatórios que não foram entregues
 
 Neste repositório foram entregues todos os requisitos.
-
-## Testes
-
-Para executar os testes digite o comando:
-```
-    npm run test
-```
 
 ## Como executar o projeto
 - Na raiz do projeto renomeie o arquivo **.env.example** para **.env**;
@@ -65,6 +58,13 @@ npx sequelize-cli db:migrate
     "phone": "(11) 111111111",
     "password": "1111111111111"
 }
+```
+
+## Testes
+
+Para executar os testes digite o comando:
+```
+    npm run test
 ```
 ## Autor
 - Autor - Jonathan Cruz
