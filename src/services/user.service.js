@@ -11,9 +11,9 @@ module.exports = {
 
       const user = await users.create(req.body);
 
-      res.status(code.CREATED).json(returnal(true, messages.CREATED, user));
+      res.status(code.CREATED).json(returnal(messages.CREATED, true, user));
     } catch (error) {
-      res.status(code.SERVER_ERROR).json(returnal(false, error.messages));
+      res.status(code.SERVER_ERROR).json(returnal(error.messages, false));
     }
   },
 }
