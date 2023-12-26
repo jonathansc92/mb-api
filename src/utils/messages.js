@@ -5,4 +5,5 @@ module.exports = {
     MIN: 'Quantidade máxima de caracteres inválida!',
     BAD_REQUEST: 'Dados de requisição inválidos.',
     ERROR: 'Ocorreu um erro, contate o administrador!',
+    CREATED: 'Cadastro realizado com sucesso!'
 }

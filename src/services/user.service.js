@@ -1,19 +1,25 @@
-const { user } = require('../models/user');
+const { users } = require('../models');
 const messages = require('../utils/messages');
+const code = require('../utils/statusCode');
 
 module.exports = {
-    async registration(req, res) {
-        try {
-            const { data } = req.body; // Assuming the date is sent in the request body
+  async registration(req, res) {
+    try {
+      const user = await users.findOne({
+        where: {
+          email: req.body.email
+        }
+      });
 
-            const newUser = await user.create({ data });
-        
-            // New user has been saved
-            console.log('User created:', newUser.toJSON());
-            return newUser;
-          } catch (error) {
-            console.error('Error creating user:', error);
-            throw error;
-          }
-    },
+      if (user) {
+        res.status(code.UNPROCESSABLE).send('O e-mail, já se encontra cadastrado no sistema!');
+      }
+
+      await users.create(req.body);
+
+      res.status(code.CREATED).send(messages.CREATED);
+    } catch (error) {
+      res.status(code.SERVER_ERROR).json({ error: error.message });
+    }
+  },
 }
