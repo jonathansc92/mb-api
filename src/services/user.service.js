@@ -10,7 +10,7 @@ module.exports = {
 
       res.status(code.CREATED).json(returnal(messages.CREATED, true));
     } catch (error) {
-      res.status(code.SERVER_ERROR).json(returnal(error.messages, false));
+      res.status(code.SERVER_ERROR).json(returnal(error, false));
     }
   },
 }

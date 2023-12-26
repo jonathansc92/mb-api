@@ -9,7 +9,7 @@ Na pasta src temos algumas estruturas de pastas.
 - **controllers**: Nesta pasta há um controlador para os alunos, cuja responsabilidade é entregar as requisições da api;
 - **routes**: Contém as rotas de chamadas para a api;
 - **services**: Nesta pasta há os serviços responsáveis pela regra de negócio e retorno das requisições pela api, que são chamadas pelos controladores;
-- **validations**: Esta camada é responsável pelas validações das requisições de salvar ou atualizar um aluno.
+- **validations**: Esta camada é responsável pelas validações das requisições.
 
 Na raiz da pasta src, há dois arquivos o app.js, importante arquivo que inclui as rotas.
 
@@ -50,9 +50,7 @@ Para executar os testes digite o comando:
 ```
 
 ## Rotas
-- GET [http://localhost:8080/](http://localhost:8080/)
-- POST [http://localhost:8080/api/auth/login](http://localhost:8080/api/auth/login)
-- POST [http://localhost:8080/api/auth/logout](http://localhost:8080/api/auth/login)
+- POST [http://localhost:8080/api/registration](http://localhost:8080/api/registration)
 
 ## Autor
 - Autor - Jonathan Cruz
