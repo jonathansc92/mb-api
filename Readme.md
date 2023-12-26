@@ -50,7 +50,7 @@ Para executar os testes digite o comando:
 ```
 - Dentro do container na raiz do projeto, digite o comando abaixo para gerar as tabelas:
 ```
-npx sequelize-cli db:migrate, 
+npx sequelize-cli db:migrate
 ```
 
 ## Rotas
