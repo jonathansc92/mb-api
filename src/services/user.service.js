@@ -1,25 +1,16 @@
 const { users } = require('../models');
 const messages = require('../utils/messages');
 const code = require('../utils/statusCode');
+const { returnal } = require('../utils/helper');
 
 module.exports = {
   async registration(req, res) {
     try {
-      const user = await users.findOne({
-        where: {
-          email: req.body.email
-        }
-      });
+      const user = await users.create(req.body);
 
-      if (user) {
-        res.status(code.UNPROCESSABLE).send('O e-mail, já se encontra cadastrado no sistema!');
-      }
-
-      await users.create(req.body);
-
-      res.status(code.CREATED).send(messages.CREATED);
+      res.status(code.CREATED).json(returnal(true, messages.CREATED, user));
     } catch (error) {
-      res.status(code.SERVER_ERROR).json({ error: error.message });
+      res.status(code.SERVER_ERROR).json(returnal(false, error.messages));
     }
   },
 }
