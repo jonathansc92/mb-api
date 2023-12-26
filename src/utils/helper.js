@@ -6,6 +6,11 @@ const returnal = (message = '', success = false, content = {}) => {
     }
 }
 
+const cleanDocument = (document) => {
+    return document.replace(/\D/g, '');
+  }
+
 module.exports = {
-    returnal
+    returnal,
+    cleanDocument
 }
