@@ -55,8 +55,8 @@ Para executar os testes digite o comando:
 - Payload:
 ```
 {
-    "email": "leonardo.e@lyncas.net",
-    "name": "jonathansc92@gmail.com",
+    "email": "teste@teste.com",
+    "name": "Teste MB",
     "document": "111.111.111-11",
     "date": "06/01/1992",
     "phone": "(11) 111111111",
