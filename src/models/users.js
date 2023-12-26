@@ -30,6 +30,10 @@ module.exports = (sequelize, DataTypes) => {
           const hashedPassword = await bcrypt.hash(user.password, 10);
           user.password = hashedPassword;
         }
+
+        if (user.date) {
+          user.date = new Date(user.date).toISOString();
+        }
       },
     },
     sequelize,
