@@ -48,10 +48,21 @@ Para executar os testes digite o comando:
 ```
     docker-compose up -d
 ```
+- Dentro do container na raiz do projeto, digite o comando npx sequelize-cli db:migrate, para gerar as tabelas
 
 ## Rotas
 - POST [http://localhost:8080/api/registration](http://localhost:8080/api/registration)
-
+- Payload:
+```
+{
+    "email": "leonardo.e@lyncas.net",
+    "name": "jonathansc92@gmail.com",
+    "document": "111.111.111-11",
+    "date": "06/01/1992",
+    "phone": "(11) 111111111",
+    "password": "1111111111111"
+}
+```
 ## Autor
 - Autor - Jonathan Cruz
 - [https://jonathansc92.github.io/jonathancruzdev/?language=ptBr](https://jonathansc92.github.io/jonathancruzdev/?language=ptBr)
