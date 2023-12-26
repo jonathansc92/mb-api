@@ -5,6 +5,8 @@ const {
   Model
 } = require('sequelize');
 
+const { cleanDocument } = require('../utils/helper');
+
 module.exports = (sequelize, DataTypes) => {
   class users extends Model {
     /**
@@ -33,6 +35,14 @@ module.exports = (sequelize, DataTypes) => {
 
         if (user.date) {
           user.date = new Date(user.date).toISOString();
+        }
+
+        if (user.document) {
+          user.document = cleanDocument(user.document);
+        }
+
+        if (user.phone) {
+          user.phone = cleanDocument(user.phone);
         }
       },
     },

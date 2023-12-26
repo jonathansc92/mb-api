@@ -20,7 +20,7 @@ const user = () => [
     .isLength({ min: 11 })
     .withMessage(messages.MIN)
     .bail()
-    .isLength({ max: 14 })
+    .isLength({ max: 18 })
     .withMessage(messages.MAX),
   check('date')
     .notEmpty()
