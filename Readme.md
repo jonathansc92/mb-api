@@ -48,7 +48,10 @@ Para executar os testes digite o comando:
 ```
     docker-compose up -d
 ```
-- Dentro do container na raiz do projeto, digite o comando npx sequelize-cli db:migrate, para gerar as tabelas
+- Dentro do container na raiz do projeto, digite o comando abaixo para gerar as tabelas:
+```
+npx sequelize-cli db:migrate, 
+```
 
 ## Rotas
 - POST [http://localhost:8080/api/registration](http://localhost:8080/api/registration)
