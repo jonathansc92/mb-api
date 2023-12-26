@@ -3,21 +3,21 @@
     "username": "root",
     "password": "desafiomb",
     "database": "mb",
-    "host": "mb-db",
+    "host": "db",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
     "password": "desafiomb",
     "database": "mb",
-    "host": "mb-db",
+    "host": "db",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
     "password": "desafiomb",
     "database": "mb",
-    "host": "mb-db",
+    "host": "db",
     "dialect": "mysql"
   }
 }

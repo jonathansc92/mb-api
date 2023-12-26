@@ -4,7 +4,7 @@ services:
     build: .
     volumes:
       - .:/src
-    command: npm run serve
+    command: npm run start
     ports:
       - "${PORT}:${PORT}"
     environment:
